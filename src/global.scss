@@ -9,3 +9,10 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+.text-center { text-align: center }
+
+.padding-horizontal {
+    padding-left: 8px;
+    padding-right: 8px;
+}

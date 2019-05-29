@@ -1,15 +1,15 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="" defaultHref="home" icon="ios-arrow-back"></ion-back-button>
     </ion-buttons>
     <ion-title>Pedidos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding-top>
-  <ion-row class="padding-horizontal">
-    <ion-col size="9">
+  <ion-row class="padding-horizontal" *ngFor="let item of demands">
+    <ion-col size="9" [routerLink]="'/demand-detail'">
       <ion-item lines="none">
         <div class="width-100">
           <div>
@@ -39,3 +39,7 @@
     </ion-col>
   </ion-row>
 </ion-content>
+
+<ion-footer>
+  <ion-button expand="full">Atualizar</ion-button>
+</ion-footer>

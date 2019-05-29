@@ -9,6 +9,8 @@ import { RouterLink } from '@angular/router';
 })
 export class DemandsPage implements OnInit {
 
+  demands = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
   constructor(
     public actionSheetController: ActionSheetController,
     public navCtrl: NavController
@@ -19,42 +21,35 @@ export class DemandsPage implements OnInit {
 
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
-      header: 'Albums',
+      header: 'Ações',
       buttons: [{
-        text: 'Delete',
+        text: 'Detalhes',
+        icon: 'clipboard',
+        handler: () => {
+          console.log('Detalhes clicked');
+          this.navCtrl.navigateForward('/demand-detail');
+        }
+      }, {
+        text: 'Entregue',
+        icon: 'checkmark-circle',
+        cssClass: 'successIcon',
+        handler: () => {
+          console.log('Entregue clicked');
+        }
+      }, {
+        text: 'Não entregue',
         role: 'destructive',
-        icon: 'trash',
+        icon: 'close-circle',
+        cssClass: 'dangerIcon',
         handler: () => {
-          console.log('Delete clicked');
-          this.navCtrl.navigateForward('/demand-detail');
+          console.log('Não entregue clicked');
         }
       }, {
-        text: 'Share',
-        icon: 'share',
-        handler: () => {
-          console.log('Share clicked');
-          this.navCtrl.navigateForward('/demand-detail');
-        }
-      }, {
-        text: 'Play (open modal)',
-        icon: 'arrow-dropright-circle',
-        handler: () => {
-          console.log('Play clicked');
-          this.navCtrl.navigateForward('/demand-detail');
-        }
-      }, {
-        text: 'Favorite',
-        icon: 'heart',
-        handler: () => {
-          console.log('Favorite clicked');
-          this.navCtrl.navigateForward('/demand-detail');
-        }
-      }, {
-        text: 'Cancel',
+        text: 'Fechar',
         icon: 'close',
         role: 'cancel',
         handler: () => {
-          console.log('Cancel clicked');
+          console.log('Fechar clicked');
         }
       }]
     });

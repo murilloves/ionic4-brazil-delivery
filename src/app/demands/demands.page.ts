@@ -38,7 +38,6 @@ export class DemandsPage implements OnInit {
         }
       }, {
         text: 'Não entregue',
-        role: 'destructive',
         icon: 'close-circle',
         cssClass: 'dangerIcon',
         handler: () => {

@@ -18,7 +18,8 @@ const routes: Routes = [
   { path: 'demands', loadChildren: './demands/demands.module#DemandsPageModule' },
   { path: 'config', loadChildren: './config/config.module#ConfigPageModule' },
   { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
-  { path: 'demand-detail', loadChildren: './demand-detail/demand-detail.module#DemandDetailPageModule' }
+  { path: 'demand-detail', loadChildren: './demand-detail/demand-detail.module#DemandDetailPageModule' },
+  { path: 'demand-action', loadChildren: './demand-action/demand-action.module#DemandActionPageModule' }
 ];
 
 @NgModule({

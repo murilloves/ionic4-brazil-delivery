@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar [color]="confirmDelivery ? 'success' : 'danger'">
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="demands" icon="ios-arrow-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{ confirmDelivery ? 'Confirmar Entrega' : 'Informar Motivo' }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-col padding>
+    <ion-card padding>
+      <ion-item>
+        <ion-label color="dark">
+          <h5>Pedido <strong>183014608</strong></h5>
+        </ion-label>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label>
+          <h5 color="dark">Nota Fiscal</h5>
+          <p>409693</p>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+  </ion-col>
+  <ion-col>
+    <div padding *ngIf="!confirmDelivery">
+      <ion-item no-padding>
+        <ion-label color="medium">Motivo</ion-label>
+        <ion-select placeholder="Selecione">
+          <ion-select-option value="1">Tempo de entrega</ion-select-option>
+          <ion-select-option value="2">Endereço errado</ion-select-option>
+          <ion-select-option value="3">Cliente desistiu</ion-select-option>
+          <ion-select-option value="4">Peça errada</ion-select-option>
+          <ion-select-option value="5">Peça com defeito</ion-select-option>
+          <ion-select-option value="6">Cliente não está presente</ion-select-option>
+          <ion-select-option value="7">Outro motivo (descrever)</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <div padding>
+      <ion-item no-padding>
+        <ion-label position="floating" color="medium">Observações</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    </div>
+  </ion-col>
+</ion-content>
+
+<ion-footer>
+  <ion-button expand="full" [color]="confirmDelivery ? 'success' : 'danger'">
+    <ion-icon name="checkmark"></ion-icon>
+    Confirmar
+  </ion-button>
+</ion-footer>

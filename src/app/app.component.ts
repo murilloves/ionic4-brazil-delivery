@@ -32,7 +32,7 @@ export class AppComponent {
     },
     {
       title: 'Sair',
-      url: '/list',
+      url: '/login',
       icon: 'power'
     }
   ];

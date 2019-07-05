@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid style="height: 100%">
+    <ion-row justify-content-center align-items-center style="height: 100%">
+      <!-- <form [formGroup]="loginForm"> -->
+      <form style="width: 100%">
+        <ion-item>
+          <!-- <ion-input formControlName="email" type="text" placeholder="Email"></ion-input> -->
+          <ion-input type="text" placeholder="Email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <!-- <ion-input formControlName="password" type="text" placeholder="Password"></ion-input> -->
+          <ion-input type="text" placeholder="Password"></ion-input>
+        </ion-item>
+        <ion-col class="ion-margin-top">
+          <ion-button [routerLink]="'/home'" shape="round" size="default" color="primary" expand="block">Login</ion-button>
+        </ion-col>
+      </form>
+    </ion-row> 
+  </ion-grid>
+</ion-content>
